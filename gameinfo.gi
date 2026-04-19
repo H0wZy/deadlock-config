@@ -465,6 +465,7 @@
 
 	ConVars
 	{	
+		"citadel_unit_status_use_v2" "true"
 		"r_aspectratio" "2.7"
 		"r_citadel_selection_outline2_alpha" "255"
         "citadel_player_outline_fade_range_max" "9800" 
