@@ -465,7 +465,6 @@
 
 	ConVars
 	{	
-		"citadel_unit_status_use_v2" "true"
 		"r_aspectratio" "2.7"
 		"r_citadel_selection_outline2_alpha" "255"
         "citadel_player_outline_fade_range_max" "9800" 
@@ -476,14 +475,6 @@
 		"r_monitor_3dskybox" "0"
 		"r_world_wind_strength" "0"
 		"sv_waterdist" "0"
-
-		// ------------- Delete essa parte se você se importa com a iluminação do jogo --------------------------
-		r_directlighting 0                    // Desativa a iluminação direta, aumenta MUITO o FPS.
-		r_rendersun 0                         // Desativa a iluminação do sol e reduz a carga da GPU.
-		lb_enable_shadow_casting 0            // Desativa a projeção de sombras, aumenta MUITO o FPS.
-		lb_enable_dynamic_lights 0            // Desativa ALGUMAS luzes dinâmicas.
-		lb_enable_lights 1                    // Desativa as luzes estaticas e economiza o delay da GPU
-		lb_enable_stationary_lights 0         // Desativa as luzes estacionarias (seja lá o que isso for, MAS DÁ FPS!!)
 
 		"rate"
 		{
