@@ -7,7 +7,7 @@ Minha configuração do Deadlock: `gameinfo.gi` focado em FPS e clareza visual, 
 | Arquivo | O que é |
 |---|---|
 | `gameinfo.gi` | Config do motor (convars). Base: **OptimizationLock v3.2** (Otimização do Deadlock, @nokeimee), com ajustes meus. |
-| `DEADLOCK-QOL-LOCK-CONFIG.txt` | Código de configuração do mod [QOL Lock](https://moglock.gg) (versão `QOL-2-2-9`). Cola no menu do mod pra restaurar. |
+| `qol_lock_settings.txt` | Código de configuração do mod [QOL Lock](https://moglock.gg) (versão `QOL-4-1-0-C`). Cola no menu do mod pra restaurar. |
 
 ## Como instalar
 
