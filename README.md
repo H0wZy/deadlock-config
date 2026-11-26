@@ -8,15 +8,15 @@ Minha configuração do Deadlock: `gameinfo.gi` focado em FPS e clareza visual, 
 |---|---|
 | `gameinfo.gi` | Config do motor (convars). Base: **OptimizationLock v3.2** (Otimização do Deadlock, @nokeimee), com ajustes meus. |
 | `qol_lock_settings.txt` | Código de configuração do mod [QOL Lock](https://moglock.gg) (versão `QOL-4-1-0-C`). Cola no menu do mod pra restaurar. |
+| `addons/` | Mods (`.vpk`) e o manifesto do Deadlock Mod Manager (`.dmm.json`). |
+
+O repositório é a própria pasta `Deadlock\game\citadel`: o `.gitignore` ignora tudo e libera só os arquivos acima, então o resto do jogo (gerenciado pela Steam) fica fora do git. O `.gitattributes` desliga a conversão de fim de linha pra os arquivos ficarem idênticos aos que o jogo lê.
 
 ## Como instalar
 
-1. Faça backup do seu `gameinfo.gi` atual.
-2. Copie o `gameinfo.gi` daqui para:
-   `Steam\steamapps\common\Deadlock\game\citadel\gameinfo.gi`
-3. Abra o jogo.
+Clone direto na pasta do jogo (ou copie `gameinfo.gi` e `addons/` para `Steam\steamapps\common\Deadlock\game\citadel\`) e abra o jogo.
 
-> A cada atualização do Deadlock a Steam pode sobrescrever o `gameinfo.gi`. Se a config "sumir", é só copiar de novo.
+> A cada atualização do Deadlock a Steam pode sobrescrever o `gameinfo.gi`. Se a config "sumir", `git checkout gameinfo.gi` restaura.
 > Se o jogo fechar com `FATAL ERROR: Unable to find child ... in layout file 'panorama\layout\...'`, o culpado é um mod de HUD desatualizado (ex.: QOL Lock), não o gameinfo. Desative o mod até sair a versão nova.
 
 ## Destaques da config
@@ -58,7 +58,7 @@ O `fade_range` infinito impede o contorno de sumir pela distância. A cor do con
 - **QOL Lock** (GameBanana 650634): HUD e qualidade de vida.
 - Mod de barras de vida numéricas.
 
-Os `.vpk` dos mods não ficam no repositório (são de terceiros e pesados). Baixe pelo GameBanana ou pelo Deadlock Mod Manager.
+Os `.vpk` ficam em `addons/`. Os créditos e licenças são dos autores de cada mod no GameBanana.
 
 ## Créditos
 

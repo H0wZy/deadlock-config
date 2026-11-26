@@ -1,0 +1,10 @@
+# Version only my config: gameinfo.gi, mods (addons/) and docs.
+# Everything else is game files managed by Steam.
+/*
+!/.gitignore
+!/README.md
+!/gameinfo.gi
+!/qol_lock_settings.txt
+!/addons/
+/addons/replays/
+!/.gitattributes

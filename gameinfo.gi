@@ -1,4 +1,4 @@
-// Otimização do Deadlock @nokeimee - 30/09/26
+// Otimização do Deadlock @h0wzy - 26/11/2026
 
 GameInfo
 {
