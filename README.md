@@ -9,6 +9,7 @@ Minha configuração do Deadlock: `gameinfo.gi` focado em FPS e clareza visual, 
 | `gameinfo.gi` | Config do motor (convars). Base: **OptimizationLock v3.2** (Otimização do Deadlock, @nokeimee), com ajustes meus. |
 | `qol_lock_settings.txt` | Código de configuração do mod [QOL Lock](https://moglock.gg) (versão `QOL-4-1-0-C`). Cola no menu do mod pra restaurar. |
 | `addons/` | Mods (`.vpk`) e o manifesto do Deadlock Mod Manager (`.dmm.json`). |
+| `patches/` | Correções minhas aplicadas em cima de mods (ver [Correção do minimapa da Mirage](#correção-minimapa-da-ulti-da-mirage-complock)). |
 
 O repositório é a própria pasta `Deadlock\game\citadel`: o `.gitignore` ignora tudo e libera só os arquivos acima, então o resto do jogo (gerenciado pela Steam) fica fora do git. O `.gitattributes` desliga a conversão de fim de linha pra os arquivos ficarem idênticos aos que o jogo lê.
 
@@ -56,9 +57,25 @@ O `fade_range` infinito impede o contorno de sumir pela distância. A cor do con
 ## Mods usados
 
 - **QOL Lock** (GameBanana 650634): HUD e qualidade de vida.
+- **CompLock** (deadlockconfig.com, de jcStani e HoppCX): HUD e minimapa limpos. É o `addons/pak01_dir.vpk`, com a correção abaixo.
 - Mod de barras de vida numéricas.
 
 Os `.vpk` ficam em `addons/`. Os créditos e licenças são dos autores de cada mod no GameBanana.
+
+## Correção: minimapa da ulti da Mirage (CompLock)
+
+Na ulti da Mirage o jogo abre o minimapa no centro da tela e joga o cursor pro meio. Com o CompLock o mapa ficava no canto inferior direito. O motivo: o `#minimap_persp` é um `GlobalClassListener`, que põe a classe `gMinimapTargeting` no painel **pai**; o CompLock embrulha o minimapa num painel próprio (`#HudppRateSrc_map`, o limitador de FPS do HUD) e a regra dele que prende o mapa no canto ganhava da regra do jogo que centraliza.
+
+- `patches/complock_mirage_minimap.css`: as regras que centralizam o mapa só durante a mira.
+- `patches/apply_complock_patch.py`: injeta esse CSS no `clean_minimap.vcss_c` dentro do `addons/pak01_dir.vpk`. Rodar de novo substitui a versão anterior.
+
+Para mudar o **tamanho** do mapa centralizado, edite a linha `ui-scale` do `.css` (100% = jogo original, 123% ≈ 650 px de altura em 1080p) e aplique com o jogo fechado:
+
+```
+py patches/apply_complock_patch.py
+```
+
+Baixou o CompLock de novo no deadlockconfig.com (ou mudou opções lá)? Rode o script outra vez.
 
 ## Créditos
 

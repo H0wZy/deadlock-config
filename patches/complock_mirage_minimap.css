@@ -1,0 +1,38 @@
+/* Minimapa centralizado na ulti da Mirage, para o CompLock.
+ *
+ * Quando você mira no mapa (ulti da Mirage), o jogo centraliza o minimapa com a regra
+ * ".gMinimapTargeting #minimap_persp" do hud.vcss. O #minimap_persp é um GlobalClassListener:
+ * ele põe a classe gMinimapTargeting no painel PAI. No CompLock o pai é o #HudppRateSrc_map
+ * (o limitador de FPS do HUD), e a regra do mod que prende o mapa no canto ganha da regra do jogo.
+ * As regras abaixo são mais específicas e só valem durante a mira.
+ *
+ * Depois de editar, aplique com o Deadlock FECHADO (o jogo só lê o VPK quando abre):
+ *     py patches/apply_complock_patch.py
+ * Os comentários deste arquivo não vão para o jogo, só as regras.
+ */
+
+.HudppCleanMM #gameplay_hud #HudppRateSrc_map.gMinimapTargeting #minimap_persp,
+CitadelHud.HudppCleanMM #gameplay_hud .gMinimapTargeting #minimap_persp {
+    horizontal-align: center;
+    vertical-align: center;
+    margin: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    transform-origin: 50% 50%;
+
+    /* TAMANHO do mapa centralizado (100% = tamanho do jogo original).
+     * Altura aproximada do mapa numa tela 1080p:
+     *   100% = 530 px | 110% = 585 px | 115% = 610 px | 123% = 650 px | 130% = 690 px | 140% = 740 px
+     * Acima de uns 150% o mapa começa a encostar nas bordas da tela. */
+    ui-scale: 123%;
+}
+
+/* Caixa do mapa no tamanho do jogo original durante a mira (o CompLock fixa 400 px). Não precisa mexer. */
+.HudppCleanMM #gameplay_hud #HudppRateSrc_map.gMinimapTargeting #minimap_persp #minimap_container,
+CitadelHud.HudppCleanMM #gameplay_hud .gMinimapTargeting #minimap_persp #minimap_container {
+    width: 560px;
+    height: 560px;
+    margin-right: 0px;
+}
