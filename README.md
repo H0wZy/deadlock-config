@@ -69,11 +69,13 @@ Na ulti da Mirage o jogo abre o minimapa no centro da tela e joga o cursor pro m
 - `patches/complock_mirage_minimap.css`: as regras que centralizam o mapa só durante a mira.
 - `patches/apply_complock_patch.py`: injeta esse CSS no `clean_minimap.vcss_c` dentro do `addons/pak01_dir.vpk`. Rodar de novo substitui a versão anterior.
 
-Para mudar o **tamanho** do mapa centralizado, edite a linha `ui-scale` do `.css` (100% = jogo original, 123% ≈ 650 px de altura em 1080p) e aplique com o jogo fechado:
+Para mudar o **tamanho** do mapa centralizado, edite a linha `ui-scale` do `.css` (100% = jogo original, 123% ≈ 650 px de altura em 1080p) e aplique com o jogo fechado, na pasta `citadel`:
 
 ```
-py patches/apply_complock_patch.py
+make
 ```
+
+O `make` roda `py patches/apply_complock_patch.py` (dá pra rodar esse comando direto também).
 
 Baixou o CompLock de novo no deadlockconfig.com (ou mudou opções lá)? Rode o script outra vez.
 

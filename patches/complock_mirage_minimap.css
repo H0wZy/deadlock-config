@@ -6,8 +6,8 @@
  * (o limitador de FPS do HUD), e a regra do mod que prende o mapa no canto ganha da regra do jogo.
  * As regras abaixo são mais específicas e só valem durante a mira.
  *
- * Depois de editar, aplique com o Deadlock FECHADO (o jogo só lê o VPK quando abre):
- *     py patches/apply_complock_patch.py
+ * Depois de editar, aplique com o Deadlock FECHADO (o jogo só lê o VPK quando abre), na pasta citadel:
+ *     make        (ou: py patches/apply_complock_patch.py)
  * Os comentários deste arquivo não vão para o jogo, só as regras.
  */
 
